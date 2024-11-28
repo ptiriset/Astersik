@@ -97,7 +97,7 @@ exten => s, 1, Set(CALLERID(all)=${CLI_BYTE})
   same => n, Dial(SIP/${ARG1},60,tT)                                        
   same => n, Hangup                                                         
   same => n(parallel1),GotoIf($["${ARG3}X" != "X"]?parallel2)                            
-  same => n, Dial(SIP/${ARG1} & SIP/${ARG5},60,tT)                          
+  same => n, Dial(SIP/${ARG1} & SIP/${ARG2},60,tT)                          
   same => n, Hangup                                                         
   same => n(parallel2),Dial(SIP/${ARG1} & SIP/${ARG2} & SIP/${ARG3} ,60,tT) 
   same => n, Hangup                                                             
